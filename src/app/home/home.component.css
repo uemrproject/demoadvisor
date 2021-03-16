@@ -110,7 +110,38 @@
   .same-height {
     height: 300px !important;
   }
+  .intro-card.box-shadow-4.same-height.img1{
+    
+   background-image: url(../../assets/two.jpg);
+   width: 250;
+   height: 350;
   
+  }
+  .intro-card.box-shadow-4.same-height.img2{
+    
+    background-image: url(../../assets/one.jpg);
+    width: 250;
+    height: 350;
+    
+   
+   }
+   .intro-card.box-shadow-4.same-height.img3{
+    
+    background-image: url(../../assets/three.jpg);
+    width: 250;
+    height: 350;
+   
+   }
+   .intro-card.backbg{
+     background-image: url(../../assets/pexels-photo-280490.jpeg);
+   }
+   
+  .logo.home{
+    background-image: url(../../assets/logo.png);
+    width:120px;
+    padding-left: 20px; padding-bottom: 5px; margin-top: 10px;
+
+  }
   /************************************************************ Large devices only ***********************************************************/
   
   @media (min-width: 1200px) {
