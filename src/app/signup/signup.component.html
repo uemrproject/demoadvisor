@@ -1,0 +1,437 @@
+<header>
+  <nav id="sc2">
+    <ul>
+      <label class="checkbox-label" for="toggle" title="Click to view">
+        <i class="fas fa-bars"></i>
+      </label>
+      <input type="checkbox" id="toggle" class="visually-hidden" />
+      <li class="logo">
+        <img
+          src="../../assets/logo.png"
+          alt=" logo"
+          width="120px"
+          style="padding-left: 20px; padding-bottom: 5px; margin-top: 10px"
+        />
+      </li>
+      <li class="nav-item active">
+        <a
+          routerLink="/"
+          title="Home"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <img
+            src="../../assets/home (1).png"
+            class="mr-2"
+            alt="Home"
+            style="display: inline-block; padding-bottom: 0px; margin-top: 5px"
+            width="30px"
+          />
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="signup" routerLinkActive="active" title="signup">
+          <img
+            src="../../assets/home (2).png"
+            alt="signup"
+            class="mr-2"
+            style="
+              display: inline-block;
+              padding-bottom: -20px;
+              margin-top: 5px;
+            "
+            width="30px"
+          />
+          Sign up
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<br />
+<div
+  data-aos="flip-left"
+  data-aos-easing="ease-out-cubic"
+  data-aos-duration="2000"
+>
+  <div class="container">
+    <div class="box-shadow-4" style="background-color: white">
+      <br />
+      <div
+        class="display-flex justify-content-center w-100 font-montserrat font-xx-large"
+      >
+        <div class="pb-4">Registration</div>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <div style="margin-bottom: 20px"></div>
+
+      <div class="container">
+        <form class="form-style" #sign="ngForm" (ngSubmit)="submitsignup(sign)">
+          <!-- Name field -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xl-4">
+                <div class="group">
+                  <input
+                    [ngClass]="{
+                      'border-red': firstname.errors && firstname.touched
+                    }"
+                    type="text"
+                    class="input"
+                    ngDefaultControl
+                    name="firstname"
+                    ngModel
+                    #firstname="ngModel"
+                    required
+                  />
+                  <label for="name"> <i class=""></i> Enter First Name</label>
+                  <span class="highlight"></span>
+                  <span
+                    [ngClass]="{
+                      'border-red': firstname.errors && firstname.touched
+                    }"
+                    class="bar"
+                  ></span>
+
+                  <span
+                    class="helper-text bg-error"
+                    *ngIf="firstname.errors?.required && firstname.touched"
+                  >
+                    First Name Is Required
+                  </span>
+                </div>
+              </div>
+              <div class="col-xl-4">
+                <div class="group">
+                  <input
+                    type="text"
+                    name="middlename"
+                    ngModel
+                    #middlename="ngModel"
+                  />
+                  <label for="name"> <i class=""></i> Middle name</label>
+                </div>
+              </div>
+              <div class="col-xl-4">
+                <div class="group">
+                  <input
+                    [ngClass]="{
+                      'border-red': lastname.errors && lastname.touched
+                    }"
+                    type="text"
+                    name="lastname"
+                    required
+                    ngModel
+                    #lastname="ngModel"
+                  />
+                  <label for="name"> Last Name</label>
+                  <span class="highlight"></span>
+                  <span
+                    [ngClass]="{
+                      'border-red': lastname.errors && lastname.touched
+                    }"
+                    class="bar"
+                  ></span>
+
+                  <span
+                    class="helper-text bg-error"
+                    *ngIf="lastname.errors?.required && lastname.touched"
+                  >
+                    Last Name is Required
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row">
+              <!-- address field -->
+              <div class="col-xl-6">
+                <div class="group">
+                  <input
+                    [ngClass]="{
+                      'border-red': address.errors && address.touched
+                    }"
+                    type="text"
+                    name="address"
+                    required
+                    ngModel
+                    #address="ngModel"
+                  />
+                  <label for="name"> Address</label>
+                  <span class="highlight"></span>
+                  <span
+                    [ngClass]="{
+                      'border-red': address.errors && address.touched
+                    }"
+                    class="bar"
+                  ></span>
+
+                  <span
+                    class="helper-text bg-error"
+                    *ngIf="address.errors?.required && address.touched"
+                  >
+                    Address Is Required
+                  </span>
+                </div>
+              </div>
+
+              <!-- Gender field -->
+              <div class="col-xl-6">
+                <div class="select font-montserrat">
+                  <select
+                    class="select-text"
+                    [ngClass]="{
+                      'border-red': gender.errors && gender.touched
+                    }"
+                    required
+                    ngModel
+                    #gender="ngModel"
+                    name="gender"
+                  >
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Transgender">Transgender</option>
+                  </select>
+                  <span class="select-highlight"></span>
+                  <span
+                    class="select-bar"
+                    [ngClass]="{
+                      'border-red': gender.errors && gender.touched
+                    }"
+                  ></span>
+                  <label class="select-label"> Gender</label>
+                  <div
+                    class="helper-text bg-error"
+                    *ngIf="gender.errors?.required && gender.touched"
+                  >
+                    Gender Is Required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xl-6">
+                <!-- city/town name field -->
+                <div class="group">
+                  <input
+                    [ngClass]="{
+                      'border-red': citytown.errors && citytown.touched
+                    }"
+                    type="text"
+                    name="citytown"
+                    required
+                    ngModel
+                    #citytown="ngModel"
+                  />
+                  <label for="name"> City/Town</label>
+                  <span class="highlight"></span>
+                  <span
+                    [ngClass]="{
+                      'border-red': citytown.errors && citytown.touched
+                    }"
+                    class="bar"
+                  ></span>
+
+                  <span
+                    class="helper-text bg-error"
+                    *ngIf="citytown.errors?.required && citytown.touched"
+                  >
+                    City/Town Is Required
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xl-6">
+                <!-- email id field -->
+                <div class="group">
+                  <input
+                    [ngClass]="{
+                      'border-red': Email.errors && Email.touched
+                    }"
+                    type="text"
+                    name="Email"
+                    ngModel
+                    required
+                    #Email="ngModel"
+                    email
+                  />
+                  <label for="name">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Email</label
+                  >
+                  <span class="highlight"></span>
+                  <span
+                    [ngClass]="{
+                      'border-red': Email.errors && Email.touched
+                    }"
+                    class="bar"
+                  ></span>
+                  <span
+                    class="helper-text bg-error"
+                    *ngIf="Email.errors?.email && Email.touched"
+                  >
+                    Please enter a valid Email address
+                  </span>
+                  <span
+                    class="helper-text bg-error"
+                    *ngIf="Email.errors?.required && Email.touched"
+                  >
+                    Email is required
+                  </span>
+                </div>
+              </div>
+              <!-- contact field -->
+              <div class="col-xl-6">
+                <div class="group">
+                  <input
+                    [ngClass]="{
+                      'border-red': contact.errors && contact.touched
+                    }"
+                    type="tel"
+                    ngModel
+                    #contact="ngModel"
+                    pattern="^[\+91]{3}[7896]{1}\d{9}$"
+                    maxlength="13"
+                    minlenght="13"
+                    name="contact"
+                    required
+                  />
+                  <label for="name"> Contact</label>
+                  <span class="highlight"></span>
+                  <span
+                    [ngClass]="{
+                      'border-red': contact.errors && contact.touched
+                    }"
+                    class="bar"
+                  ></span>
+                  <span
+                    class="helper-text bg-error"
+                    *ngIf="contact.errors?.pattern && contact.touched"
+                  >
+                    Please Enter +91 Before
+                  </span>
+                  <span
+                    class="helper-text bg-error"
+                    *ngIf="contact.errors?.required && contact.touched"
+                  >
+                    Contact Is Required
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xl-6">
+                <!-- date of birth field -->
+                <div class="group">
+                  <input
+                    [ngClass]="{
+                      'border-red': DOBb.errors && DOBb.touched
+                    }"
+                    ngModel
+                    name="DOBirth"
+                    type="date"
+                    ngDefaultControl
+                    #DOBb="ngModel"
+                    required
+                  />
+                  <label for="name" style="margin-top: -10px"> DOB</label>
+                  <span class="highlight"></span>
+                  <span
+                    [ngClass]="{
+                      'border-red': DOBb.errors && DOBb.touched
+                    }"
+                    class="bar"
+                  ></span>
+
+                  <span
+                    class="helper-text bg-error"
+                    *ngIf="DOBb.errors?.required && DOBb.touched"
+                  >
+                    DOB Is Required
+                  </span>
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <!-- marital Status field -->
+                <div class="select font-montserrat">
+                  <select
+                    class="select-text"
+                    [ngClass]="{
+                      'border-red':
+                        maritalStatus.errors && maritalStatus.touched
+                    }"
+                    ngModel
+                    #maritalStatus="ngModel"
+                    name="maritalStatus"
+                    required
+                  >
+                    <option value="UnMarried">UnMarried</option>
+                    <option value="Married">Married</option>
+                    <option value="widow">Widow</option>
+                    <option value="divorce">Divorce</option>
+                  </select>
+                  <span class="select-highlight"></span>
+                  <span
+                    class="select-bar"
+                    [ngClass]="{
+                      'border-red':
+                        maritalStatus.errors && maritalStatus.touched
+                    }"
+                  ></span>
+                  <label class="select-label"> Marital Status</label>
+                  <div
+                    class="helper-text bg-error"
+                    *ngIf="
+                      maritalStatus.errors?.required && maritalStatus.touched
+                    "
+                  >
+                    Marital Status Is Required
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+
+          <br />
+          <br />
+          <br />
+          <!-- Select registred hospital -->
+        </form>
+      </div>
+
+      <br />
+      <!-- Action Footer -->
+      <footer class="container mb-4">
+        <!--  Submit Button -->
+        <button
+          type="submit"
+          style="float: right"
+          (click)="submitsignup(sign)"
+          class="button"
+          [disabled]="sign.invalid"
+        >
+          <Span>Submit</Span>
+        </button>
+      </footer>
+      <br />
+      <br />
+    </div>
+  </div>
+</div>
