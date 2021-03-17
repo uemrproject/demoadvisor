@@ -6,9 +6,11 @@ import { information } from '../modal/information';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
 })
+
 export class SignupComponent implements OnInit {
   constructor(private snackbar: SnackbarService) {}
   information;
+  parsedata;
   submitsignup(sign) {
     this.information = sign.value;
     console.log(sign.value);
@@ -54,16 +56,30 @@ export class SignupComponent implements OnInit {
       };
       this.snackbar.add({
         msg: 'You Have Been Successfully Registered',
-
-        color: 'green',
+        background: 'green',
+        color: 'white',
         timeout: 8000,
         action: {
           text: 'Close',
           color: 'red',
         },
       });
-
-      console.log(data);
+const jsdata= JSON.stringify(data);
+this.parsedata= JSON.parse(jsdata);
+console.log(this.parsedata);
+this.snackbar.add({
+  msg:'your Data is : ' + this.parsedata.firstname +" " + 
+  this.parsedata.lastname +" " + this.parsedata.address +" " +
+   this.parsedata.Email +" " + this.parsedata.DOB ,
+   background: '#ffcccb',
+  color: 'black',
+  timeout: 8000,
+  action: {
+    text: 'Close',
+    color: 'red',
+  },
+});
+      //console.log(data);
     }
   }
   ngOnInit(): void {}
