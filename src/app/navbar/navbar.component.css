@@ -1,5 +1,6 @@
-.bgimg-1 {
-    background-image: "";
+
+  .bgimg-1 {
+    background-image:'';
     height: 89.5vh;
     margin-top: -24px;
     position: relative;
@@ -11,16 +12,17 @@
     padding: 20px;
     margin: 20px;
   }
-  .col-xl-12 {
+  .col-xl-12{
     text-align: center;
     margin-top: 30px;
     font-size: 50px;
     margin-bottom: 30px;
-  
+
     padding: auto;
     max-width: 4px 2px;
+
   }
-  .btn.btn-dark {
+  .btn.btn-dark{
     background-color: #ddd;
     border: none;
     color: black;
@@ -62,90 +64,67 @@
     right: 0;
     font-size: 3rem;
   }
-  .li {
+  .li{
     margin-bottom: 0px;
     display: inline-block;
     padding-bottom: 0px;
-  }
-  .detail {
-    text-align: left;
-  
     align-items: center;
-    font-family: "Rubik", sans-serif;
-  
+    position: relative;
+    text-align: center;
+
+  }
+  .detail{
+    text-align:left ;
+   
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+   
     color: gray;
+    
   }
-  .intro-card-body.ul {
-    list-style-type: circle;
+  .intro-card-body.ul{
+list-style-type: circle;
   }
-  
-  .footer {
+ 
+  .footer{
     background-color: lightgrey;
     width: 100%;
     padding: 20px;
     text-transform: capitalize;
     text-align: center;
+    
   }
-  .footer-text {
+    .footer-text{
+    
     opacity: 0.8;
-    font-family: "Rubik", sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 2rem;
   }
-  .footer-text::before {
-    content: "©";
+  .footer-text::before{
+    content: '©';
   }
-  .selected {
-    background-color: #606c76;
+  .selected{
+     background-color: #606c76;
     border-color: #606c76;
     color: #fff;
     outline: 0;
   }
-  .card-icon {
-    display: flex;
-    flex: 1 1 auto;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .same-height {
-    height: 300px !important;
-  }
-  .intro-card.box-shadow-4.same-height.img1{
-    
-   background-image: url(../../assets/two.jpg);
-   width: 250;
-   height: 350;
-  
-  }
-  .intro-card.box-shadow-4.same-height.img2{
-    
-    background-image: url(../../assets/one.jpg);
-    width: 250;
-    height: 350;
-    
+   .card-icon{
+      display: flex;
+      flex :1 1 auto;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .same-height{
+      height: 300px !important;
+    }
    
-   }
-   .intro-card.box-shadow-4.same-height.img3{
-    
-    background-image: url(../../assets/three.jpg);
-    width: 250;
-    height: 350;
-   
-   }
-   .intro-card.backbg{
-     background-image: url(../../assets/pexels-photo-280490.jpeg);
-   }
-   .imagelogo{
-     background-image: url(../../assets/logo.png);
-     width:20px;
-     max-width: 120px;
-     max-height: 50px;
-     /* padding-left: 20px; padding-bottom: 5px; margin-top: 10px */
-   }
-  
   /************************************************************ Large devices only ***********************************************************/
   
   @media (min-width: 1200px) {
+  
+  
   }
   
   /******************************************************************Medium devices only********************************************* **********/
@@ -154,10 +133,10 @@
     .caption {
       bottom: 60%;
     }
-    .footer-text {
-      font-family: "Rubik", sans-serif;
-      font-size: 3rem;
-    }
+    .footer-text{
+    font-family: 'Rubik', sans-serif;
+    font-size: 3rem;
+  }
   }
   
   @media (min-width: 768px) and (max-width: 991px) {
@@ -166,31 +145,32 @@
       bottom: 45%;
     }
   }
+
   
   /* extra small devices */
   @media (max-width: 767px) {
-    .home-wrapper {
+    .home-wrapper{
       padding: 20px;
     }
     .intro-card {
       margin-right: 20px;
       margin-left: 20px;
     }
-    .card-icon {
+    .card-icon{
       display: flex;
       text-align: center;
       width: 100%;
       justify-content: center;
     }
-    .footer-text {
-      font-family: "Rubik", sans-serif;
-      font-size: 1rem;
-    }
+    .footer-text{
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+  }
     .intro-card-title {
       font-size: 2.5rem;
       text-align: center;
+      
     }
-    
     .intro-card-title::before {
       margin-right: 0px;
     }
@@ -215,4 +195,3 @@
       font-size: 1.5rem;
     }
   }
-  
